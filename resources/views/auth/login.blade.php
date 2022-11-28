@@ -27,28 +27,7 @@
 {{--</form>--}}
 
 
-<!--
-  This example requires some changes to your config:
 
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
-<!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full bg-gray-50">
-  <body class="h-full">
-  ```
--->
 <script src="https://cdn.tailwindcss.com"></script>
 <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     <div class="w-full max-w-md space-y-8">
@@ -60,7 +39,8 @@
                 <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">start your 14-day free trial</a>
             </p>
         </div>
-        <form class="mt-8 space-y-6" action="#" method="POST">
+        <form class="mt-8 space-y-6" action="/login" method="POST">
+            @csrf
             <input type="hidden" name="remember" value="true">
             <div class="-space-y-px rounded-md shadow-sm">
                 <div>
@@ -95,6 +75,3 @@
 </div>
 
 
-<script setup>
-    import { LockClosedIcon } from '@heroicons/vue/20/solid'
-</script>
